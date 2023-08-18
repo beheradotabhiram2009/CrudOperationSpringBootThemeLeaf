@@ -9,6 +9,6 @@ CREATE TABLE `student` (
   `content` mediumblob,
   `updated_by` varchar(45) DEFAULT NULL,
   `updated_on` datetime(6) DEFAULT NULL,
-   PRIMARY KEY (`Id`),
+   PRIMARY KEY (`Id`)
   );
 
