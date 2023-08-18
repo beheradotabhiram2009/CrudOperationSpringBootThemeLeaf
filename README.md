@@ -49,6 +49,20 @@ select springboot version 2.7.14
 
 select MYSQL Driver, Spring Data JPA, Spring Web
 
+run as Spring Boot App
+
+you should see 'Everything Works so far'
+
+Create  folders models, controllers, repos, services under com.ucp.demo
+
+create class Student under models folder
+
+create class StudentRepository under repos folder
+
+create class StudentServices under services folder
+
+create class HomeController and StudentController under controllers folder
+
 
 
 
