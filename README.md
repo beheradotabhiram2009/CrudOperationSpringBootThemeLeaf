@@ -43,6 +43,16 @@ select java version: 8; Language: java
 
 Write group name for example com.ucp; artifect: demo; version: 0.0.1-SNAPSHOT; package: com.ucp.student
 
+then select next
+
+select springboot version 2.7.14
+
+select MYSQL Driver, Spring Data JPA, Spring Web
+
+
+
+
+
 
 
 
