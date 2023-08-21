@@ -1,11 +1,9 @@
 # CrudOperationUsingSpringBootThemeLeaf
 Demo Example provides crud operation using spring boot theme leaf from MySQL database
 
-The project uses mysql database 
-
 You have to download and install mysql 8.1
 
-you have to create a database mydb which contains a table student
+create a database mydb and a table student
 
 student table can be created by using following sql
 
@@ -21,33 +19,21 @@ CREATE TABLE `student` (
 
 add one row for sample
 
-download and install spring tool suite 4
+download and install java 8.0 and spring tool suite 4
 
-download and install java 8.0
+run springtoolsuite4. to create new project : File-> new-> project <-/
 
-run springtoolsuite4. it will create a workspace.
-
-to create new project : File-> new-> project <-/
-
-Select 'spring starter project' in 'spring boot' option
-
-then select next
+Select 'spring starter project' in 'spring boot' optiont. Then select next
 
 provide project name for example demo
 
 select default location or provide location by using browse
 
-select project type: Maven; packaging: jar
+select project type: Maven; packaging: jar; select java version: 8; Language: java
 
-select java version: 8; Language: java
+Write group name for example com.ucp; artifect: demo; version: 0.0.1-SNAPSHOT; package: com.ucp.demo; then select next
 
-Write group name for example com.ucp; artifect: demo; version: 0.0.1-SNAPSHOT; package: com.ucp.student
-
-then select next
-
-select springboot version 2.7.14
-
-select MYSQL Driver, Spring Data JPA, Spring Web
+select springboot version 2.7.14; select MYSQL Driver, Spring Data JPA, Spring Web
 
 run as Spring Boot App
 
