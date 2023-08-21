@@ -1,11 +1,9 @@
 # CrudOperationUsingSpringBootThemeLeaf
 Demo Example provides crud operation using spring boot theme leaf from MySQL database
 
-You have to download and install mysql 8.1
+Download and install mysql 8.1
 
-create a database mydb and a table student
-
-student table can be created by using following sql
+create a database mydb and a table student by using following sql
 
 CREATE TABLE `student` (
   `Id` int NOT NULL AUTO_INCREMENT,
@@ -17,7 +15,7 @@ CREATE TABLE `student` (
    PRIMARY KEY (`Id`)
   );
 
-add one sample row.
+insert sample rows.
 
 download and install java 1.8 and spring tool suite 4
 
@@ -35,7 +33,7 @@ Write group name for example com.ucp; artifect: demo; version: 0.0.1-SNAPSHOT; p
 
 select springboot version 2.7.14; select MYSQL Driver, Spring Data JPA, Spring Web
 
-application.properties under src.main.resources should contain:
+under src.main.resources file application.properties should contain:
 
 server.port=8080
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -111,7 +109,7 @@ Create  folders models, controllers, repos, services under com.ucp.demo
 
 create class HomeController under controllers folder
 
-create class HomeController should contail
+create class HomeController, it should contain:
 
 package com.ucp.demo.controllers;
 import org.springframework.stereotype.Controller;
@@ -139,6 +137,7 @@ create index.html file under templates folder which contains:
 now run as Spring Boot App and browse http://localhost:8080/
 
 you should see 'Everything Works so far'
+
 
 create class Student under models folder. it should contain:
 
@@ -230,7 +229,6 @@ public class Student {
 		this.content = content;
 	}
 }
-
 
 create class StudentRepository under repos folder. it should contain:
 
@@ -547,7 +545,3 @@ create add-student.html under templates folder. it should contain:
 
 
 now run as Spring Boot App and browse http://localhost:8080/students/getAll and test
-
-
-  
-
