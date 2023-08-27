@@ -107,9 +107,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 
 # Create  folders models, controllers, repos, services under com.ucp.mydemo
 
-# create class HomeController under controllers folder
-
-# create class HomeController, it should contain:
+# create class HomeController under controllers folder, it should contain:
 
 package com.ucp.demo.controllers;
 import org.springframework.stereotype.Controller;
