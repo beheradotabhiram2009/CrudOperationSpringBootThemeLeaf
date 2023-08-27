@@ -29,7 +29,7 @@ CREATE TABLE `student` (
 
 # select project type: Maven; packaging: jar; select java version: 17; Language: java
 
-# Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; package: com.ucp.demo; then select next
+# Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; package: com.ucp.mydemo; then select next
 
 # select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
 
