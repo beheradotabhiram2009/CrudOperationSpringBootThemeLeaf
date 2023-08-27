@@ -95,7 +95,6 @@ spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 </project>
 
 # Create  folders models, controllers, repos, services under com.ucp.mydemo
-
 # create class HomeController under controllers folder, it should contain:
 
 package com.ucp.demo.controllers;
@@ -122,9 +121,7 @@ public class HomeController {
 </body>
 
 # now run as Spring Boot App and browse http://localhost:8080/
-
 # you should see 'Everything Works so far'
-
 # create class Student under models folder. it should contain:
 
 package com.ucp.mydemo.models;
@@ -421,9 +418,7 @@ public class StudentController {
 </body>
 
 # now run as Spring Boot App and browse http://localhost:8080/students/getAll
-
 # it should give lit of students.
-
 # create add-student.html under templates folder. it should contain:
 
 <!DOCTYPE html>
