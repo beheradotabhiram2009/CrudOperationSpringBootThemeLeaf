@@ -136,7 +136,7 @@ public class HomeController {
 
 # you should see 'Everything Works so far'
 
-#create class Student under models folder. it should contain:
+# create class Student under models folder. it should contain:
 
 package com.ucp.mydemo.models;
 
