@@ -1,9 +1,9 @@
 # CrudOperationUsingSpringBootThemeLeaf
-Demo Example provides crud operation using spring boot theme leaf from MySQL database
+# Demo Example provides crud operation using spring boot theme leaf from MySQL database
 
-Download and install mysql 8.1
+# Download and install mysql 8.1
 
-create a database mydb and a table student by using following sql
+# create a database mydb and a table student by using following sql
 
 CREATE TABLE `student` (
   `Id` int NOT NULL AUTO_INCREMENT,
@@ -15,25 +15,25 @@ CREATE TABLE `student` (
    PRIMARY KEY (`Id`)
   );
 
-insert sample rows.
+# insert sample rows.
 
-download and install java 1.8 and spring tool suite 4
+# download and install java 17 and spring tool suite 4
 
-run springtoolsuite4. to create new project : File-> new-> project <-/
+# run springtoolsuite4. to create new project : File-> new-> project <-/
 
-Select 'spring starter project' in 'spring boot' optiont. Then select next
+# Select 'spring starter project' in 'spring boot' optiont. Then select next
 
-provide project name for example demo
+# provide project name for example mydemo
 
-select default location or provide location by using browse
+# select default location or provide location by using browse
 
-select project type: Maven; packaging: jar; select java version: 8; Language: java
+# select project type: Maven; packaging: jar; select java version: 17; Language: java
 
-Write group name for example com.ucp; artifect: demo; version: 0.0.1-SNAPSHOT; package: com.ucp.demo; then select next
+# Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; package: com.ucp.demo; then select next
 
-select springboot version 2.7.14; select MYSQL Driver, Spring Data JPA, Spring Web
+# select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
 
-under src.main.resources file application.properties should contain:
+# under src.main.resources file application.properties should contain:
 
 server.port=8080
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -41,7 +41,7 @@ spring.datasource.password=root
 spring.datasource.username=root
 spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 
-edit pom.xml under demo so that it contains:
+# edit pom.xml under demo so that it contains:
 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -50,16 +50,16 @@ edit pom.xml under demo so that it contains:
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.14</version>
+		<version>3.1.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ucp</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>mydemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>mydemo</name>
 	<description>project for crud operation using mysql Spring Boot themeleaf</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,14 +75,14 @@ edit pom.xml under demo so that it contains:
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-    		<groupId>org.webjars.bower</groupId>
-    		<artifactId>bootstrap</artifactId>
-    		<version>5.1.3</version>
+    			<groupId>org.webjars.bower</groupId>
+    			<artifactId>bootstrap</artifactId>
+    			<version>5.3.0</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.webjars.bower</groupId>
-    		<artifactId>jquery</artifactId>
-    		<version>3.6.0</version>
+    			<groupId>org.webjars.bower</groupId>
+    			<artifactId>jquery</artifactId>
+    			<version>3.7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -105,7 +105,7 @@ edit pom.xml under demo so that it contains:
 	</build>
 </project>
 
-Create  folders models, controllers, repos, services under com.ucp.demo
+# Create  folders models, controllers, repos, services under com.ucp.mydemo
 
 create class HomeController under controllers folder
 
