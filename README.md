@@ -1,8 +1,6 @@
 # CrudOperationUsingSpringBootThemeLeaf
 # Demo Example provides crud operation using spring boot theme leaf from MySQL database
-
 # Download and install mysql 8.1
-
 # create a database mydb and a table student by using following sql
 
 CREATE TABLE `student` (
@@ -16,23 +14,14 @@ CREATE TABLE `student` (
   );
 
 # insert sample rows.
-
 # download and install java 17 and spring tool suite 4
-
 # run springtoolsuite4. to create new project : File-> new-> project <-/
-
 # Select 'spring starter project' in 'spring boot' optiont. Then select next
-
 # provide project name for example mydemo
-
 # select default location or provide location by using browse
-
 # select project type: Maven; packaging: jar; select java version: 17; Language: java
-
 # Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; package: com.ucp.mydemo; then select next
-
 # select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
-
 # under src.main.resources file application.properties should contain:
 
 server.port=8080
