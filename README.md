@@ -125,16 +125,12 @@ public class HomeController {
 # create class Student under models folder. it should contain:
 
 package com.ucp.mydemo.models;
-
 import java.util.Date;
-
 import org.springframework.format.annotation.DateTimeFormat;
-
 import jakarta.persistence.Entity;
 
 @Entity
 public class Student {
-	
 	@jakarta.persistence.Id
 	private Integer Id;
 	private String name;
@@ -157,7 +153,6 @@ public class Student {
 		this.updatedBy = updatedBy;
 		this.updatedOn = updatedOn;
 	}
-
 	@Override
 	public String toString() {
 		return "Student [Id=" + Id + ", name=" + name + ", department=" + department + ", "
@@ -217,11 +212,8 @@ public class Student {
 # create class StudentRepository under repos folder. it should contain:
 
 package com.ucp.mydemo.repos;
-
 import org.springframework.data.repository.CrudRepository;
-
 import com.ucp.mydemo.models.Student;
-
 public interface StudentRepository extends CrudRepository<Student, Integer>{
 	
 } 
@@ -229,12 +221,9 @@ public interface StudentRepository extends CrudRepository<Student, Integer>{
 # create class StudentServices under services folder. it should contain:
 
 package com.ucp.mydemo.services;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.ucp.mydemo.models.Student;
 import com.ucp.mydemo.repos.StudentRepository;
 
