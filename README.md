@@ -41,7 +41,7 @@ spring.datasource.password=root
 spring.datasource.username=root
 spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 
-# edit pom.xml under demo so that it contains:
+# edit pom.xml under mydemo so that it contains:
 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
