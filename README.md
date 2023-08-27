@@ -107,9 +107,9 @@ spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 
 # Create  folders models, controllers, repos, services under com.ucp.mydemo
 
-create class HomeController under controllers folder
+# create class HomeController under controllers folder
 
-create class HomeController, it should contain:
+# create class HomeController, it should contain:
 
 package com.ucp.demo.controllers;
 import org.springframework.stereotype.Controller;
@@ -122,7 +122,7 @@ public class HomeController {
 	}
 }
 
-create index.html file under templates folder which contains:
+# create index.html file under templates folder which contains:
 
 <!DOCTYPE html>
 <html>
@@ -134,25 +134,24 @@ create index.html file under templates folder which contains:
 <h2>Everything Works so far</h2>
 </body>
 
-now run as Spring Boot App and browse http://localhost:8080/
+# now run as Spring Boot App and browse http://localhost:8080/
 
-you should see 'Everything Works so far'
+# you should see 'Everything Works so far'
 
+#create class Student under models folder. it should contain:
 
-create class Student under models folder. it should contain:
-
-package com.ucp.demo.models;
+package com.ucp.mydemo.models;
 
 import java.util.Date;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
 
 @Entity
 public class Student {
 	
-	@Id
+	@jakarta.persistence.Id
 	private Integer Id;
 	private String name;
 	private String department;
@@ -230,29 +229,30 @@ public class Student {
 	}
 }
 
-create class StudentRepository under repos folder. it should contain:
 
-package com.ucp.demo.repos;
+# create class StudentRepository under repos folder. it should contain:
+
+package com.ucp.mydemo.repos;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ucp.demo.models.Student;
+import com.ucp.mydemo.models.Student;
 
 public interface StudentRepository extends CrudRepository<Student, Integer>{
 	
 } 
 
-create class StudentServices under services folder. it should contain:
+# create class StudentServices under services folder. it should contain:
 
-package com.ucp.demo.services;
+package com.ucp.mydemo.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ucp.demo.models.Student;
-import com.ucp.demo.repos.StudentRepository;
+import com.ucp.mydemo.models.Student;
+import com.ucp.mydemo.repos.StudentRepository;
 
 @Service
 public class StudentService {
@@ -295,9 +295,10 @@ public class StudentService {
 }
 
 
-create class StudentController under controlers folder. it should contain:
 
-package com.ucp.demo.controllers;
+# create class StudentController under controlers folder. it should contain:
+
+package com.ucp.mydemo.controllers;
 
 import java.io.IOException;
 import java.util.List;
@@ -306,18 +307,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ucp.demo.models.Student;
-import com.ucp.demo.services.StudentService;
+import com.ucp.mydemo.models.Student;
+import com.ucp.mydemo.services.StudentService;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/students")
@@ -326,21 +328,21 @@ public class StudentController {
 	@Autowired(required=true)
 	private StudentService studentService;
 	
-	@RequestMapping("/getAll")
+	@GetMapping("/getAll")
 	public String getAll(Model model) {
 		List<Student> stlist = studentService.getAll();
 		model.addAttribute("students", stlist);
 		return "students";
 	}
 	
-	@RequestMapping(value="/addNew", method=RequestMethod.GET)
+	@GetMapping("/addNew")
 	public String newStudent(Model model) {
 		Student student = new Student();
 		model.addAttribute("student", student);
 		return "add-student";
     }
 	
-	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+	@GetMapping("/edit/{id}")
 	public String editStudent(@PathVariable("id") int id, Model model, HttpServletResponse response) 
 			throws IOException {
 		Student student = studentService.getStudent(id);
@@ -349,13 +351,13 @@ public class StudentController {
 		return "edit-student";
     }
 	
-	@RequestMapping(value="/delete/{id}", method=RequestMethod.POST)
+	@PostMapping("/delete/{id}")
 	public String deleteStudent(@PathVariable("id") int id) {
 		studentService.delete(id);
         return "redirect:/students/getAll";
     }
 	
-	@RequestMapping(value="/saveNew", method=RequestMethod.POST)
+	@PostMapping("/saveNew")
 	public String insertStudent(
 			@ModelAttribute(value="student") Student student,
 			@RequestParam("photo") MultipartFile file) throws IOException {
@@ -364,7 +366,7 @@ public class StudentController {
         return "redirect:/students/getAll";
     }
 	
-	@RequestMapping(value="/update/{id}", method=RequestMethod.POST)
+	@PostMapping("/update/{id}")
 	public String updateStudent(
 			@PathVariable("id") int id, 
 			@ModelAttribute(value="student") Student student,
@@ -376,19 +378,19 @@ public class StudentController {
     }
 	
 	  
-	 @RequestMapping(value = "/getPhoto", method=RequestMethod.GET)
+	 @GetMapping("/getPhoto")
 	 public void getStudentPhoto(HttpServletResponse response, @Param("id") int id) 
 			 throws ServletException, IOException 
 	 {
-		 System.out.println(id);
-		 response.setContentType("image/jpeg, image/jpg, image/png");
+		 response.setContentType("jpeg, jpg, png");
 		 Student student = studentService.getStudent(id);
 		 response.getOutputStream().write(student.getContent());
 		 response.getOutputStream().close();
 	 }	
 }
 
-create students.html under templates folder. it should contain:
+
+# create students.html under templates folder. it should contain:
 
 <!DOCTYPE html>
 <html>
