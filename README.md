@@ -389,16 +389,15 @@ public class StudentController {
 	 }	
 }
 
-
 # create students.html under templates folder. it should contain:
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="/webjars/bootstrap/5.1.3/dist/css/bootstrap.css" rel="stylesheet"/>
-<script type="text/javascript" src="/webjars/bootstrap/5.1.3/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/webjars/jquery/3.6.0/dist/jquery.min.js"></script>
+<link href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.css" rel="stylesheet"/>
+<script type="text/javascript" src="/webjars/bootstrap/5.3.0/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/webjars/jquery/3.7.0/dist/jquery.min.js"></script>
 <title>spring crud app</title>
 </head>
 <body>
@@ -419,7 +418,7 @@ public class StudentController {
 <td th:text="${student.department}"></td>
 <td th:text="${student.updatedBy}"></td>
 <td th:text="${student.updatedOn}"></td>
-<td><img th:src="@{getPhoto/?id=__${student.Id}__}"	alt="" width="50px" height="50px"/></td>
+<td><img th:src="@{getPhoto?id=__${student.Id}__}"	alt="" width="50px" height="50px"/></td>
 <td> <button class="btn btn-outline-dark" type="button">
          <a th:href="@{edit/__${student.Id}__}">Edit</a>
       </button>
@@ -434,19 +433,19 @@ public class StudentController {
 </table>
 </body>
 
-now run as Spring Boot App and browse http://localhost:8080/students/getAll
+# now run as Spring Boot App and browse http://localhost:8080/students/getAll
 
-it should give lit of students.
+# it should give lit of students.
 
-create add-student.html under templates folder. it should contain:
+# create add-student.html under templates folder. it should contain:
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="ISO-8859-1">
-		<link href="/webjars/bootstrap/5.1.3/dist/css/bootstrap.css" rel="stylesheet"/>
-		<script type="text/javascript" src="/webjars/bootstrap/5.1.3/dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/webjars/jquery/3.6.0/dist/jquery.min.js"></script>
+		<link href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.css" rel="stylesheet"/>
+		<script type="text/javascript" src="/webjars/bootstrap/5.3.0/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/webjars/jquery/3.7.0/dist/jquery.min.js"></script>
 		<title>Student</title>
 	</head>
 	<body>
@@ -491,15 +490,15 @@ create add-student.html under templates folder. it should contain:
        </body>
   </html>
 
-  create edit-student.html under templates folder. it should contain:
+ # create edit-student.html under templates folder. it should contain:
 
   <!DOCTYPE html>
-  <html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="ISO-8859-1">
-		<link href="/webjars/bootstrap/5.1.3/dist/css/bootstrap.css" rel="stylesheet"/>
-		<script type="text/javascript" src="/webjars/bootstrap/5.1.3/dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/webjars/jquery/3.6.0/dist/jquery.min.js"></script>
+		<link href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.css" rel="stylesheet"/>
+		<script type="text/javascript" src="/webjars/bootstrap/5.3.0/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/webjars/jquery/3.7.0/dist/jquery.min.js"></script>
 		<title>Student</title>
 	</head>
 	<body>
@@ -530,7 +529,7 @@ create add-student.html under templates folder. it should contain:
                     </td></tr><tr>
                     <tr><td align="right"><label for="photo">Photo:</label></td  ></td>
                     <td><input type="file" name="photo"/></td>
-                    <td><img th:src="@{/students/getPhoto/?id=__${student.Id}__}" alt="" width="100px" height="100px"/></td></tr>
+                    <td><img th:src="@{/students/getPhoto?id=__${student.Id}__}" alt="" width="100px" height="100px"/></td></tr>
                     	<td align="center" colspan="3">
                     		<input class="btn btn-outline-dark" type="submit" Style="color:blue; text-decoration: underline"/>                    		
                     		<input class="btn btn-outline-dark" type="reset"  Style="color:blue; text-decoration: underline"/>
@@ -546,4 +545,4 @@ create add-student.html under templates folder. it should contain:
   </html>
 
 
-now run as Spring Boot App and browse http://localhost:8080/students/getAll and test
+# now run as Spring Boot App and browse http://localhost:8080/students/getAll and test
