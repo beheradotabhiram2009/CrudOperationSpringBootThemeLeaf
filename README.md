@@ -1,4 +1,4 @@
-## CrudOperationUsingSpringBootThemeLeaf
+## Crud Operation Using Spring Boot ThemeLeaf
 ### Demo Example provides crud operation using spring boot theme leaf from MySQL database
 ### Download and install mysql 8.1
 ### create a database mydb and a table student by using following sql
@@ -20,11 +20,11 @@ CREATE TABLE `student` (
 ### provide project name for example mydemo
 ### select default location or provide location by using browse
 ### select project type: Maven; packaging: jar; select java version: 17; Language: java
-### Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; package: com.ucp.mydemo; 
-### then select next
+### Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; 
+### package: com.ucp.mydemo; then select next
 ### select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
 ### under src.main.resources file application.properties should contain:
-````
+```prop
 server.port=8080
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.password=root
