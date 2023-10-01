@@ -24,7 +24,7 @@ CREATE TABLE `student` (
 ### package: com.ucp.mydemo; then select next
 ### select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
 ### under src.main.resources file application.properties should contain:
-```prop
+```properties
 server.port=8080
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.password=root
