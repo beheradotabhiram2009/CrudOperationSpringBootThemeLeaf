@@ -224,7 +224,7 @@ public class Student {
 }
 ```
 
-### create class StudentRepository under repos folder. it should contain:
+create class ```StudentRepository``` under ```repos``` folder. it should contain:
 ```java
 package com.ucp.mydemo.repos;
 import org.springframework.data.repository.CrudRepository;
