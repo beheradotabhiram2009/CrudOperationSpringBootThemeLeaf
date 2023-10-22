@@ -1,7 +1,10 @@
-## Crud Operation Using Spring Boot ThemeLeaf
-### Demo Example provides crud operation using spring boot theme leaf from MySQL database
-### Download and install mysql 8.1
-### create a database mydb and a table student by using following sql
+### Crud Operation Using Spring Boot ThemeLeaf
+
+Demo Example provides crud operation using spring boot theme leaf from MySQL database for image and date field
+
+Download and install mysql 8.1
+
+create a database mydb and a table student by using following sql
 ```sql
 CREATE TABLE `student` (
   `Id` int NOT NULL AUTO_INCREMENT,
@@ -13,17 +16,25 @@ CREATE TABLE `student` (
    PRIMARY KEY (`Id`)
   );
 ```
-### insert sample rows.
-### download and install java 17 and spring tool suite 4
-### run springtoolsuite4. to create new project : File-> new-> project <-/
-### Select 'spring starter project' in 'spring boot' optiont. Then select next
-### provide project name for example mydemo
-### select default location or provide location by using browse
-### select project type: Maven; packaging: jar; select java version: 17; Language: java
-### Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; 
-### package: com.ucp.mydemo; then select next
-### select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
-### under src.main.resources file application.properties should contain:
+insert sample rows.
+
+download and install java 17 and spring tool suite 4
+
+run springtoolsuite4. to create new project : File-> new-> project <-/
+
+Select 'spring starter project' in 'spring boot' optiont. Then select next
+
+provide project name for example mydemo
+
+select default location or provide location by using browse
+
+select project type: Maven; packaging: jar; select java version: 17; Language: java
+
+Write group name for example com.ucp; artifect: mydemo; version: 0.0.1-SNAPSHOT; 
+package: com.ucp.mydemo; then select next
+select springboot version 3.1.3; select MYSQL Driver, Spring Data JPA, Spring Web
+
+under src.main.resources file application.properties should contain:
 ```properties
 server.port=8080
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -31,7 +42,7 @@ spring.datasource.password=root
 spring.datasource.username=root
 spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 ```
-### edit pom.xml under mydemo so that it contains:
+edit pom.xml under mydemo so that it contains:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -95,8 +106,9 @@ spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 	</build>
 </project>
 ```
-### Create  folders models, controllers, repos, services under com.ucp.mydemo
-### create class HomeController under controllers folder, it should contain:
+Create  folders ```models```, ```controllers```, ```repos```, ```services``` under ```com.ucp.mydemo```
+
+create class ```HomeController``` under controllers folder, it should contain:
 ```java
 package com.ucp.demo.controllers;
 import org.springframework.stereotype.Controller;
@@ -109,7 +121,7 @@ public class HomeController {
 	}
 }
 ```
-### create index.html file under templates folder which contains:
+create index.html file under ```templates``` folder which contains:
 ```html
 <!DOCTYPE html>
 <html>
@@ -121,9 +133,11 @@ public class HomeController {
 <h2>Everything Works so far</h2>
 </body>
 ```
-### now run as Spring Boot App and browse http://localhost:8080/
-### you should see 'Everything Works so far'
-### create class Student under models folder. it should contain:
+now run as Spring Boot App and browse http://localhost:8080/
+
+you should see 'Everything Works so far'
+
+create class Student under models folder. it should contain:
 ```java
 package com.ucp.mydemo.models;
 import java.util.Date;
@@ -219,7 +233,7 @@ public interface StudentRepository extends CrudRepository<Student, Integer>{
 	
 } 
 ```
-### create class StudentServices under services folder. it should contain:
+create class StudentServices under services folder. it should contain:
 ```java
 package com.ucp.mydemo.services;
 import java.util.List;
@@ -268,7 +282,7 @@ public class StudentService {
 	}
 }
 ```
-### create class StudentController under controlers folder. it should contain:
+create class StudentController under controlers folder. it should contain:
 ```java
 package com.ucp.mydemo.controllers;
 
@@ -361,7 +375,7 @@ public class StudentController {
 	 }	
 }
 ```
-### create students.html under templates folder. it should contain:
+create students.html under templates folder. it should contain:
 ```html
 <!DOCTYPE html>
 <html>
@@ -405,9 +419,11 @@ public class StudentController {
 </table>
 </body>
 ```
-### now run as Spring Boot App and browse http://localhost:8080/students/getAll
-### it should give lit of students.
-### create add-student.html under templates folder. it should contain:
+now run as Spring Boot App and browse http://localhost:8080/students/getAll
+
+it should give lit of students.
+
+create add-student.html under templates folder. it should contain:
 ```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -460,7 +476,7 @@ public class StudentController {
        </body>
   </html>
 ```
- ### create edit-student.html under templates folder. it should contain:
+ create edit-student.html under templates folder. it should contain:
 ```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -514,4 +530,4 @@ public class StudentController {
        </body>
   </html>
 ```
-### now run as Spring Boot App and browse http://localhost:8080/students/getAll and test
+now run as Spring Boot App and browse http://localhost:8080/students/getAll and test crud operation
